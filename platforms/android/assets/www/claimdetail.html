@@ -1,0 +1,52 @@
+<ons-page ng-controller="claimdetailCtrl" modifier="claimdetail">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><strong>New Claim Found</strong></div>
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <div style="font-size:small; color: black;">
+      <p>
+        Thank you for taking the time to photograph your vehicle damage. 
+        Use of this app will help get your claim processed quicker and you back on the road. 
+        Please take a few seconds and verify the information below.
+      </p>
+      <p>
+        If everything is correct click the Start button to begin or use the Ask for help button to get assistance.
+      </p>
+    </div>
+
+    <div class="claim-info-table">
+      <ons-row>
+        <ons-col width="105px"><strong>Claim Number</strong></ons-col><ons-col><strong>{{data.ClaimNumber}}</strong></ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="105px">File Number</ons-col><ons-col>{{data.FileNumber}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="105px">Make</ons-col><ons-col>{{data.Make}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="105px">Model</ons-col><ons-col>{{data.Model}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="105px">VIN</ons-col><ons-col>{{data.Vin}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="105px">Year</ons-col><ons-col>{{data.Year}}</ons-col>
+      </ons-row>
+    </div>
+
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-click="sendPost();" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        Start
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('help.html');" class="sl-button">
+        <ons-icon icon="fa fa-envelope-o" class="sl-left-icon"></ons-icon>
+        Ask for help
+      </ons-list-item>
+    </ons-list>
+  </div>
+
+</ons-page>

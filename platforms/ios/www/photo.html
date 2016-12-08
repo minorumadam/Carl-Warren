@@ -1,0 +1,71 @@
+<ons-page ng-controller="photoCtrl" modifier="photo">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><strong>Photo</strong></div>
+  </ons-toolbar>
+
+  <div ng-if="isLandscape">
+    <ons-row>
+      <ons-col align="top">
+        <div class="pix-area" ng-if="mode === 'photo'">
+          <div style="font-weight: bold; font-size: large; margin-left: 5px;">{{label}}</div>
+          <div style="font-size:xx-small; margin-left: 5px; margin-bottom: 10px;">{{desc}}</div>
+          <div ng-show="imageurl" style="height: {{imageheight}}px; margin: 5px;" back-img="{{imageurl}}"></div>
+        </div>
+        <div class="pix-area" ng-if="mode === 'extra'">
+          <div style="font-weight: bold; font-size: large; margin-left: 5px;">Additional Photos</div>
+          <div style="font-size:xx-small; margin-left: 5px; margin-bottom: 10px;">You can take additional photos</div>
+          <div style="height: {{imageheight}}px; margin: 5px;" back-img="{{imageurl}}"></div>
+        </div>
+        <div class="video-area" ng-if="mode === 'video'">
+          <div style="font-weight: bold; font-size: large; margin-left: 5px;">Record Video of Damage</div>
+          <div style="font-size:xx-small; margin-left: 5px; margin-bottom: 10px;">Stand a few feet from vehicle and record a video of the Damage to the Vehicle.</div>
+          <video style="width: calc(100% - 5px); height: {{imageheight}}px;" controls="controls" webkit-playsinline="webkit-playsinline"
+          ng-if="videofile.fullPath">
+            <source src="{{videofile.fullPath}}" type="video/mp4">
+          </video>
+          <video style="width: calc(100% - 5px); height: {{imageheight}}px;" controls="controls" webkit-playsinline="webkit-playsinline"
+                 ng-if="!videofile.fullPath">
+          </video>
+        </div>
+      </ons-col>
+
+      <ons-col width="210px">
+        <ons-list modifier="sl-menu">
+          <ons-list-item ng-click="takePhoto()" class="sl-button" ng-if="mode === 'photo' || mode === 'extra'">
+            <ons-icon icon="fa fa-camera" class="sl-left-icon"></ons-icon>
+            Take New Photo
+          </ons-list-item>
+          <ons-list-item ng-click="usePhoto()" class="sl-button" ng-if="!netStatus && (mode === 'photo' || mode === 'extra')">
+            <ons-icon icon="fa fa-camera" class="sl-left-icon"></ons-icon>
+            Use Existing Photo
+          </ons-list-item>
+          <ons-list-item ng-click="takeVideo()" class="sl-button" ng-if="mode === 'video'">
+            <ons-icon icon="ion-ios-film" class="sl-left-icon"></ons-icon>
+            Capture Video Clip
+          </ons-list-item>
+          <ons-list-item style="padding-left: 0;">
+            <ons-row>
+              <ons-col>
+                <div class="sl-button" style="margin-right: 5px;" ng-click="app.navi.popPage()">
+                  Cancel
+                </div>
+              </ons-col>
+              <ons-col>
+                <div class="sl-button" style="margin-left: 5px;" ng-click="skip()">
+                  <span ng-if="mode === 'photo'">Skip</span>
+                  <span ng-if="mode === 'extra'">Next</span>
+                  <span ng-if="mode === 'video'">Next</span>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+
+        <div class="guide" ng-if="mode === 'photo'">*App will advance to Next Photo after you capture image.</div>
+      </ons-col>
+    </ons-row>
+
+  </div>
+
+</ons-page>

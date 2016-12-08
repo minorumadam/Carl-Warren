@@ -1,0 +1,89 @@
+<ons-page ng-controller="photolistCtrl" modifier="photolist">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><strong>Review Photos</strong></div>
+  </ons-toolbar>
+
+  <div style="background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;" class="c-black" >
+
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-repeat-start="d in data">
+        <div class="label">{{d.label}}</div>
+        <div ng-show="d.file" style="width: 95%; height: 140px; margin: 1em auto 0 auto; background: url({{d.file}}) no-repeat center; background-size: contain;"></div>
+        <div style="height: 1.5em;"></div>
+      </ons-list-item>
+      <ons-list-item ng-click="replacePhoto($index)" class="sl-button-narrow">
+        <ons-icon icon="fa fa-camera" class="sl-left-icon"></ons-icon>
+        Replace Photo
+      </ons-list-item>
+      <div style="height: 0.5em;"></div>
+      <hr ng-repeat-end/>
+    </ons-list>
+
+    <br/>
+
+    <div class="label">Additional Photos</div>
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-repeat="d in extra">
+        <div style="width: 95%; height: 140px; margin: 1em auto 0 auto; background: url({{d}}) no-repeat center; background-size: contain;"></div>
+        <div style="height: 1.5em;"></div>
+      </ons-list-item>
+      <br/>
+      <ons-list-item ng-click="onAdditionalPhoto();" class="sl-button-narrow">
+        <ons-icon icon="fa fa-camera" class="sl-left-icon"></ons-icon>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Additional Photo
+      </ons-list-item>
+    </ons-list>
+
+    <hr/>
+    <br/>
+    <div class="label">Inspection Report</div>
+    <div class="inspectionreport-form">
+      <div style="margin-bottom: 0.5em;">Inspection Type:</div>
+      <ons-row class="sca-segment">
+        <ons-col ng-class="{selected: (type == 1)}" ng-click="onSelectType(1);">Repairable</ons-col>
+        <ons-col ng-class="{selected: (type == 2)}" ng-click="onSelectType(2);">Total Loss</ons-col>
+        <ons-col ng-class="{selected: (type == 3)}" ng-click="onSelectType(3);">Other</ons-col>
+      </ons-row>
+
+      <div style="margin-top: 1em; margin-bottom: 0.5em;">Inspection Location:</div>
+      <!--<p>Inspection Location:</p>-->
+      <ui-select ng-model="location" theme="select2" style="width: 100%;" search-enabled="false" on-select="onSelectLocation($item, $model);">
+        <ui-select-match >{{$select.selected.label}}</ui-select-match>
+        <ui-select-choices repeat="t in da.location">
+          <span ng-bind-html="t.label"></span>
+        </ui-select-choices>
+      </ui-select>
+
+      <div style="margin-top: 1em;">
+        <label class="checkbox">
+          <input type="checkbox" ng-model="flag1"/><div class="checkbox__checkmark"></div>
+          Owner Inspected / Present
+        </label>
+        <br/>
+        <label class="checkbox">
+          <input type="checkbox" ng-model="flag2"/><div class="checkbox__checkmark"></div>
+          Vehicle Drivable
+        </label>
+        <br/>
+        <label class="checkbox">
+          <input type="checkbox" ng-model="flag3"/><div class="checkbox__checkmark"></div>
+          Unrelated Prior Damage
+        </label>
+      </div>
+
+      <p>Description of Damage:</p>
+      <textarea ng-model="note" class="textarea c-black grey-border" rows="5" style="width: 100%;"></textarea>
+    </div>
+
+    <br/>
+
+    <div class="sl-button-solid" ng-click="submit();">
+      <ons-icon icon="fa fa-paper-plane" class="sl-left-icon"></ons-icon>
+      Submit
+    </div>
+
+    <br/>
+  </div>
+
+</ons-page>

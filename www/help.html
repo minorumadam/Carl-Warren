@@ -1,0 +1,19 @@
+<ons-page ng-controller="helpCtrl">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><strong>Ask for Help</strong></div>
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px; color: black;">
+    <h1>Ask for Help</h1>
+
+    <p>SCA strives for 100% satisfaction in your claims process. We are just a phone call away if you need any help in the process.</p>
+    <br />
+    <p>Call us at 1-800-572-8010, click option 6 for Streamline Claims.</p>
+
+    <p ng-click="openHelp()" style="color: blue;">www.SCAclaims.com</p>
+
+    <p>Thank you for using StreamLine</p>
+  </div>
+
+</ons-page>

@@ -1,0 +1,9 @@
+{
+    "exclude": [
+        ".idea",
+        "platforms",
+        "node_modules",
+        "bower_components",
+        "plugins"
+    ]
+}

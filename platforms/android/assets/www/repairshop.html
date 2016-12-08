@@ -1,0 +1,58 @@
+<ons-page ng-controller="repairshopCtrl" modifier="repairshop">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><b>Send to Repair Shop</b></div>
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <div class="claim-info-table">
+      <ons-row>
+        <ons-col width="120px"><strong>Claim Number</strong></ons-col><ons-col><strong>{{claimInfo.ClaimNumber}}</strong></ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">File Number</ons-col><ons-col>{{claimInfo.FileNumber}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Make</ons-col><ons-col>{{claimInfo.Make}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Model</ons-col><ons-col>{{claimInfo.Model}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Vin</ons-col><ons-col>{{claimInfo.Vin}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Year</ons-col><ons-col>{{claimInfo.Year}}</ons-col>
+      </ons-row>
+    </div>
+
+    <div style="margin-bottom:1em; color: #000; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+      <p>Repair shop contact info.</p>
+
+      <ons-list>
+        <ons-list-item>
+          <input ng-model="shopname" type="text" class="text-input sl-text-input" style="width: 100%;" placeholder="Shop name">
+        </ons-list-item>
+        <ons-list-item>
+          <input ng-model="email" type="email" class="text-input sl-text-input" style="width: 100%;" placeholder="Email address">
+        </ons-list-item>
+        <ons-list-item>
+          <input ng-model="phone" type="tel" class="text-input sl-text-input" style="width: 100%;" placeholder="Phone">
+        </ons-list-item>
+      </ons-list>
+    </div>
+
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-click="sendPost()" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        Send
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('help.html');" class="sl-button">
+        <ons-icon icon="fa fa-envelope-o" class="sl-left-icon"></ons-icon>
+        Ask for help
+      </ons-list-item>
+    </ons-list>
+
+  </div>
+
+</ons-page>

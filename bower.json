@@ -1,0 +1,21 @@
+{
+  "name": "StreamLineSCA",
+  "version": "1.4.0",
+  "description": "Blake Information Solutions SCA Application",
+  "authors": [
+    "support@blakeis.com"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angular": "~1.3.10",
+    "ngstorage": "~0.3.0"
+  }
+}

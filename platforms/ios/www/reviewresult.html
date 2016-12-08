@@ -1,0 +1,46 @@
+<ons-page ng-controller="reviewresultCtrl">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><b>{{title}}</b></div>
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <div class="claim-info-table">
+      <ons-row>
+        <ons-col width="120px"><strong>Claim Number</strong></ons-col><ons-col><strong>{{claimInfo.ClaimNumber}}</strong></ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">File Number</ons-col><ons-col>{{claimInfo.FileNumber}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Make</ons-col><ons-col>{{claimInfo.Make}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Model</ons-col><ons-col>{{claimInfo.Model}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Vin</ons-col><ons-col>{{claimInfo.Vin}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Year</ons-col><ons-col>{{claimInfo.Year}}</ons-col>
+      </ons-row>
+    </div>
+
+    <div style="padding: 1em 0; margin-bottom:1em; color: #000; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;">
+      {{message}}
+    </div>
+
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-click="app.navi.popPage()" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        Done
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('help.html');" class="sl-button">
+        <ons-icon icon="fa fa-envelope-o" class="sl-left-icon"></ons-icon>
+        Ask for help
+      </ons-list-item>
+    </ons-list>
+
+  </div>
+
+</ons-page>

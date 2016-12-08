@@ -1,0 +1,52 @@
+<ons-page ng-controller="repairestimateCtrl">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><b>Repair Estimate</b></div>
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <div class="claim-info-table">
+      <ons-row>
+        <ons-col width="120px"><strong>Claim Number</strong></ons-col><ons-col><strong>{{claimInfo.ClaimNumber}}</strong></ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">File Number</ons-col><ons-col>{{claimInfo.FileNumber}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Make</ons-col><ons-col>{{claimInfo.Make}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Model</ons-col><ons-col>{{claimInfo.Model}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Vin</ons-col><ons-col>{{claimInfo.Vin}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col width="120px">Year</ons-col><ons-col>{{claimInfo.Year}}</ons-col>
+      </ons-row>
+      <ons-row>
+        <ons-col>Repair Estimate:</ons-col><ons-col><div style="text-align: right; padding-right: 10px; font-weight: bold;">{{claimStatus.EstimateAmount}}</div></ons-col>
+      </ons-row>
+    </div>
+
+    <ons-list modifier="sl-menu">
+      <!--<ons-list-item ng-click="sendPost()" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        View estimate
+      </ons-list-item>-->
+      <ons-list-item ng-click="sendCheck()" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        Send me a check
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('repairshop.html')" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        Going to a repair shop
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('help.html');" class="sl-button">
+        <ons-icon icon="fa fa-envelope-o" class="sl-left-icon"></ons-icon>
+        Ask for help
+      </ons-list-item>
+    </ons-list>
+
+  </div>
+</ons-page>

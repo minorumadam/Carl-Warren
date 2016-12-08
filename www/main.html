@@ -1,0 +1,33 @@
+<ons-page ng-controller="mainCtrl">
+
+  <ons-toolbar fixed-style>
+    <!--<div class="center"><strong>SCA Claim Services</strong></div>-->
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <div class="streamline"></div>
+    <div style="font-size:small; margin 0 10px; color: black;">
+      <p>Thank you for using StreamLine to facilitate your claims process.</p>
+      <p>To get started click 'Start a Claim'.</p>
+    </div>
+
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-click="app.navi.pushPage('newclaim.html');" modifier="chevron" class="sl-button">
+        Start a claim
+      </ons-list-item>
+      <ons-list-item ng-click="gotoReview()" modifier="chevron" class="sl-button">
+        Review claims
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('learn.html');" modifier="chevron" class="sl-button">
+        Learn about the process
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('help.html');" class="sl-button">
+        <ons-icon icon="fa fa-envelope-o" class="sl-left-icon"></ons-icon>
+        Ask for help
+      </ons-list-item>
+    </ons-list>
+
+    <div class="ccsca"></div>
+  </div>
+
+</ons-page>

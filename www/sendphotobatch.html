@@ -1,0 +1,21 @@
+<ons-page ng-controller="sendphotobatchCtrl">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><strong>Sending Photos</strong></div>
+  </ons-toolbar>
+
+  <div style="background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <ons-list modifier="sl-menu">
+      <ons-list-item>
+        <p style="color: #000; text-align: center;">
+          <span ng-if="mode === 'photo'">Sending Photo {{counter + 1}} of {{total}}</span>
+          <span ng-if="mode === 'video'">Uploading Video...</span>
+        </p>
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.popPage()" class="sl-button-narrow">
+        <ons-icon icon="fa fa-times" class="sl-left-icon"></ons-icon>
+        Cancel
+      </ons-list-item>
+    </ons-list>
+  </div>
+</ons-page>

@@ -1,0 +1,36 @@
+<ons-page ng-controller="newclaimCtrl">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><strong>Start a New Claim</strong></div>
+  </ons-toolbar>
+
+  <div style="padding: 5px 10px; background-color: rgba(255, 255, 255, 0.8); border-radius: 4px;">
+    <div style="font-size:small; color: black;">
+      <p>To start the process enter the information you received from SCA Claim Services via eMail.</p>
+      <p>Then click 'Lookup your Claim'.</p>
+    </div>
+
+    <ons-list>
+      <ons-list-item>
+        <input ng-model="filenum" type="number" class="text-input sl-text-input" style="width: 100%;" placeholder="File number">
+      </ons-list-item>
+      <ons-list-item>
+        <input ng-model="vin" type="number" class="text-input sl-text-input" style="width: 100%;" placeholder="Last four digits of the VIN#">
+      </ons-list-item>
+    </ons-list>
+
+    <div style="height:5px;"></div>
+
+    <ons-list modifier="sl-menu">
+      <ons-list-item ng-click="sendPost();" class="sl-button">
+        <ons-icon icon="fa fa-check" class="sl-left-icon"></ons-icon>
+        Lookup your Claim
+      </ons-list-item>
+      <ons-list-item ng-click="app.navi.pushPage('help.html');" class="sl-button">
+        <ons-icon icon="fa fa-envelope-o" class="sl-left-icon"></ons-icon>
+        Ask for help
+      </ons-list-item>
+    </ons-list>
+  </div>
+
+</ons-page>

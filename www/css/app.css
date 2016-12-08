@@ -1,0 +1,191 @@
+/* OnsenUI */
+.switch__toggle {
+  background-color: #ddd; }
+
+.grey-border {
+  border: 1px solid #ddd; }
+
+h1 {
+  margin: 0.2em 0; }
+
+.page__background {
+  background-image: url(../img/hawaii.jpg);
+  background-size: cover; }
+
+.page__content {
+  padding: 10px 10px 35px 10px; }
+
+.streamline {
+  height: 50px;
+  margin-top: 5px;
+  background: url(../img/streamline.png) no-repeat center;
+  background-size: contain; }
+
+.ccsca {
+  position: relative;
+  height: 45px;
+  margin-top: 10px;
+  background: url(../img/capture.png) no-repeat center;
+  background-size: contain; }
+
+.c-black {
+  color: #000; }
+
+.list {
+  background: transparent;
+  border: none; }
+
+.list__item {
+  padding: 0; }
+
+.list__item--chevron:before {
+  color: #004b8d; }
+
+.list--sl-menu .list__item {
+  margin-bottom: 7px; }
+
+.sl-button, .sl-button-narrow {
+  position: relative;
+  line-height: 44px;
+  text-align: center;
+  border-top: 1px solid #000 !important;
+  border-bottom: 1px solid #000 !important;
+  background: white;
+  color: #004b8d; }
+  .sl-button:active, .sl-button-narrow:active {
+    background: #ddd; }
+
+.sl-button-narrow {
+  margin: 0 10px; }
+
+.sl-button-solid {
+  margin: 0 10px;
+  position: relative;
+  line-height: 44px;
+  border: 1px solid #000 !important;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: larger;
+  color: white;
+  background: #004b8d;
+  text-align: center; }
+  .sl-button-solid:active {
+    background: #ddd; }
+
+.sl-left-icon {
+  position: absolute;
+  left: 16px;
+  top: 55%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.sl-text-input {
+  border: 1px solid #888; }
+
+.copyright {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  line-height: 25px;
+  z-index: 10;
+  font-family: Arial;
+  font-size: x-small; }
+
+.claim-info-table {
+  color: #000;
+  margin-top: 10px;
+  font-size: smaller; }
+  .claim-info-table .row {
+    margin-bottom: 10px; }
+
+/*                  */
+/*                  */
+.page--recentclaimlist .page__content {
+  padding: 0; }
+
+.page--recentclaimlist .list__item {
+  color: #000;
+  line-height: 1.2em;
+  padding: 0.5em 1em;
+  border-bottom: 1px solid #000 !important;
+  background-color: rgba(255, 255, 255, 0.5); }
+  .page--recentclaimlist .list__item:active {
+    background-color: silver; }
+
+.page--recentclaimlist .list__item--chevron:before {
+  color: #000; }
+
+/*                  */
+/*                  */
+.page--photo .pix-area,
+.page--photo .video-area {
+  font-size: small;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 4px;
+  padding: 10px 0;
+  margin-right: 10px; }
+
+.page--photo .list--sl-menu .list__item {
+  padding-left: 30px; }
+
+.page--photo .guide {
+  color: black;
+  font-size: xx-small;
+  position: absolute;
+  bottom: 37px; }
+
+/*                  */
+/*                  */
+.page--photolist .label {
+  font-size: large;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 0.5em;
+  color: #000; }
+
+.page--photolist .list--sl-menu .list__item {
+  height: auto;
+  line-height: 44px; }
+
+.page--photolist .inspectionreport-form {
+  padding: 10px;
+  padding-left: 15px; }
+  .page--photolist .inspectionreport-form .row.sca-segment {
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(bottom, #eee 0%, #fff 50%);
+    background-image: linear-gradient(to top, #eee 0%, #fff 50%);
+    border: 1px solid #aaa; }
+    .page--photolist .inspectionreport-form .row.sca-segment .col {
+      color: #444;
+      text-align: center;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em; }
+      .page--photolist .inspectionreport-form .row.sca-segment .col:not(:first-child) {
+        border-left: 1px solid #aaa; }
+      .page--photolist .inspectionreport-form .row.sca-segment .col.selected {
+        background: #004b8d;
+        color: #fff; }
+  .page--photolist .inspectionreport-form .checkbox {
+    margin-top: 0; }
+
+/*  iPhone 2G-4S in portrait  */
+@media only screen and (max-device-width: 320px) and (max-device-height: 480px) and (orientation: portrait) {
+  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; }
+  .streamline {
+    height: 40px; }
+  .ccsca {
+    top: -10px;
+    height: 40px; }
+  .list--sl-menu .list__item {
+    min-height: 0;
+    height: 35px;
+    line-height: 35px; }
+  .sl-button, .sl-button-narrow {
+    font-size: 0.9em; } }

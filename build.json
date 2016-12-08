@@ -1,0 +1,11 @@
+{
+     "android": {
+         "release": {
+             "keystore": "res/android/streamline_keystore",
+             "storePassword": "fortune",
+             "alias": "streamline",
+             "password" : "fortune",
+             "keystoreType": ""
+         }
+     }
+}

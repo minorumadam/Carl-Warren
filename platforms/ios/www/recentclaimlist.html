@@ -1,0 +1,15 @@
+<ons-page ng-controller="recentclaimlistCtrl" modifier="recentclaimlist">
+  <ons-toolbar fixed-style>
+    <div class="left"><ons-back-button ons-if-platform="ios">Back</ons-back-button></div>
+    <div class="center"><b>Review Claims</b></div>
+  </ons-toolbar>
+
+  <ons-list>
+    <ons-list-item ng-repeat="d in list" modifier="chevron" ng-click="sendPost($index)">
+      <b>File</b> {{d.FileNumber}} <i>{{d.Year}} {{d.Make}} {{d.Model}}</i>
+      <br/>
+      <b>VIN</b> {{d.Vin}}
+    </ons-list-item>
+  </ons-list>
+
+</ons-page>
